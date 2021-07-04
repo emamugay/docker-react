@@ -1,0 +1,25 @@
+FROM node:alpine
+
+WORKDIR '/home/node'
+
+# USER node
+
+COPY package.json .
+
+# RUN npm config set unsafe-perm true
+
+RUN npm install
+
+# RUN chown -R node.node ./node_modules
+# RUN chmod 777 -R /app/node_modules
+# RUN ["chmod", "777", "-R" "node_modules"]
+# RUN npm config set unsafe-perm true
+
+COPY . .  
+
+# CMD ["chmod", "775", "change-perm.sh"]
+
+# CMD [ "sh", "change-perm.sh" ]
+# EXPOSE 8080
+
+CMD ["npm", "run", "start"]
