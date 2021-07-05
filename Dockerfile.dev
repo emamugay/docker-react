@@ -1,6 +1,6 @@
 FROM node:alpine
 
-WORKDIR '/home/node'
+WORKDIR '/app'
 
 # USER node
 
